@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
 </head>
@@ -122,10 +123,12 @@
             </div>
 
             <div class="grid grid-cols-4 gap-4" id="videos"></div>
+
         </main>
     </div>
 </body>
 <script>
+
     const videos = [
         { title: "Curso de Html", channel: "Rodolfo Mori", views: "130mil", time: "Há dois dias", durations: "10:34" },
         { title: "Curso de Html", channel: "Rodolfo Mori", views: "130mil", time: "Há dois dias", durations: "10:34" },
@@ -146,9 +149,23 @@
 
     const container = document.getElementById("videos")
 
-    videos.forEach
+    videos.forEach((video, i) => {
+        const videoCard = document.createElement('div');
 
-oi
+        videoCard.className = 'cursor-pointer'
+
+        videoCard.innerHTML = `
+        <div class="relative bg-gray-200 rounded-xl overflow-hidden">
+            <img src="https://picsum.photos/320/180?random=${i}" class="w-full h-full object-cover">
+            <spam>
+        </div>
+        
+        `
+
+        container.appendChild(videoCard)
+
+    })
 
 </script>
+
 </html>
